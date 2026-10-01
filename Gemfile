@@ -73,5 +73,5 @@ group :test do
   gem "factory_bot_rails"
   # Pin to the 5.x line: minitest 6.0 dropped minitest/mock (Object#stub),
   # which our tests rely on for stubbing Rails.application.credentials.
-  gem "minitest", "~> 5.25"
+  gem "minitest", "~> 6.0"
 end
