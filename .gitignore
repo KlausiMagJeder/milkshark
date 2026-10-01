@@ -84,3 +84,7 @@ yarn-debug.log*
 !/log/.keep
 !/tmp/.keep
 !/storage/.keep
+
+# Local Claude working artifacts (plans, specs)
+/.claude/plans/
+/docs/superpowers/
