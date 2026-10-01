@@ -22,7 +22,7 @@ gem "jbuilder"
 # positionally, raising "wrong number of arguments (given 2, expected 1)" whenever a
 # session/flash cookie gets JSON-decoded. json (>= 2.3) is pulled in loosely via rubocop,
 # so without this pin Bundler resolves the incompatible 3.x release.
-gem "json", "~> 2.9"
+gem "json", "~> 3.0"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
