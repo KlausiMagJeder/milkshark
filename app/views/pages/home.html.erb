@@ -1,12 +1,12 @@
 <%# app/views/pages/home.html.erb %>
-<% content_for :title, "milkshark — Martin Beyer · Software Engineering & LaserCut" %>
+<% content_for :title, "milkshark - Software Engineering & LaserCut" %>
 
 <div class="page">
   <%= render "pages/home_header" %>
 
   <main class="page__main">
     <section id="top" class="container hero">
-      <p class="hero__eyebrow">Martin Beyer · Software Engineering & LaserCut</p>
+      <p class="hero__eyebrow">Software Engineering & LaserCut</p>
       <h1 class="hero__title">
         m<span class="hero__dotless-i">ı<span class="hero__dot"></span></span>lk<span class="hero__bold">shark</span><span class="hero__accent">.</span>
       </h1>
@@ -72,7 +72,7 @@
 
   <footer class="site-footer">
     <div class="container site-footer__row">
-      <span>© <%= Date.current.year %> Martin Beyer · Milkshark</span>
+      <span><%= Date.current.year %> Milkshark</span>
       <span class="site-footer__links">
         <%= link_to "Impressum", impressum_path %>
         <%= link_to "Datenschutz", datenschutz_path %>

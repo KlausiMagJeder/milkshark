@@ -2,7 +2,7 @@
 <%# local: active_page (:impressum oder :datenschutz) %>
 <footer class="site-footer">
   <div class="container site-footer__row">
-    <span>© <%= Date.current.year %> Martin Beyer · Milkshark</span>
+    <span><%= Date.current.year %> Milkshark</span>
     <span class="site-footer__links">
       <%= link_to "Startseite", root_path %>
       <% if active_page == :impressum %>
