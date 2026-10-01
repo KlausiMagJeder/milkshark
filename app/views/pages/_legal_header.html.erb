@@ -2,8 +2,8 @@
 <%# local: active_page (:impressum oder :datenschutz) %>
 <header class="site-header">
   <div class="container site-header__row">
-    <%= link_to root_path, class: "site-header__brand" do %>
-      <%= image_tag "milkshark-wordmark.svg", alt: "milkshark", width: 98, height: 22, class: "site-header__wordmark" %>
+    <%= link_to root_path, class: "site-header__brand", aria: { label: "milkshark – Startseite" } do %>
+      <%= render "pages/wordmark" %>
     <% end %>
     <nav class="nav">
       <%= link_to "Impressum", impressum_path, class: class_names("nav__link", "nav__link--active" => active_page == :impressum) %>

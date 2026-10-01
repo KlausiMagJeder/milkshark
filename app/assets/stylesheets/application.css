@@ -124,6 +124,36 @@ input, textarea, button {
   border-color: var(--color-text);
 }
 
+/* Wortmarke (Header + Hero), Größe kommt vom Elternelement */
+.wordmark {
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.wordmark__dotless-i {
+  position: relative;
+  display: inline-block;
+}
+
+.wordmark__dot {
+  position: absolute;
+  left: calc(50% + 0.0155em);
+  top: 0.125em;
+  transform: translateX(-50%);
+  width: 0.115em;
+  height: 0.115em;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.wordmark__bold {
+  font-weight: 700;
+}
+
+.wordmark__accent {
+  color: var(--color-accent);
+}
+
 /* Header & Navigation */
 .site-header {
   border-bottom: 1px solid var(--color-border);
@@ -143,10 +173,10 @@ input, textarea, button {
   align-items: center;
 }
 
-.site-header__wordmark {
-  display: block;
-  height: 22px;
-  width: auto;
+.site-header__brand .wordmark {
+  font-size: 25px;
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 
 .nav {
@@ -181,7 +211,8 @@ input, textarea, button {
 
 .site-footer__links {
   display: flex;
-  gap: 22px;
+  flex-wrap: wrap;
+  gap: 8px 22px;
 }
 
 .site-footer__links a {
@@ -200,6 +231,8 @@ input, textarea, button {
   line-height: 1.02;
   font-weight: 400;
   letter-spacing: -0.04em;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .legal__intro {
@@ -211,7 +244,7 @@ input, textarea, button {
 
 .legal__row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
   gap: 32px;
   padding: 28px 0;
   border-top: 1px solid var(--color-border);
@@ -254,34 +287,10 @@ input, textarea, button {
   letter-spacing: -0.045em;
 }
 
-.hero__dotless-i {
-  position: relative;
-  display: inline-block;
-}
-
-.hero__dot {
-  position: absolute;
-  left: calc(50% + 0.0155em);
-  top: 0.125em;
-  transform: translateX(-50%);
-  width: 0.115em;
-  height: 0.115em;
-  border-radius: 50%;
-  background: var(--color-accent);
-}
-
-.hero__bold {
-  font-weight: 700;
-}
-
-.hero__accent {
-  color: var(--color-accent);
-}
-
 .hero__intro {
   margin: 48px 0 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 40px;
   max-width: 900px;
 }
@@ -374,7 +383,7 @@ input, textarea, button {
 .approach__inner {
   padding-block: 96px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 56px;
 }
 
@@ -409,7 +418,7 @@ input, textarea, button {
 .contact__inner {
   padding-block: 96px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 56px;
 }
 
@@ -503,4 +512,104 @@ input, textarea, button {
 .flash--notice {
   background: var(--color-dark-bg);
   color: var(--color-dark-text);
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .container {
+    padding-inline: 20px;
+  }
+
+  .site-header__row {
+    padding-block: 14px;
+    gap: 10px 24px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .hero {
+    padding-block: 64px 72px;
+  }
+
+  .hero__eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .hero__title {
+    font-size: clamp(44px, 15vw, 80px);
+  }
+
+  .hero__intro {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .hero__intro p:first-child {
+    font-size: 20px;
+  }
+
+  .hero__intro p:last-child br {
+    display: none;
+  }
+
+  .hero__actions {
+    margin-top: 32px;
+  }
+
+  .services__inner,
+  .approach__inner,
+  .contact__inner {
+    padding-block: 64px;
+  }
+
+  .approach__inner,
+  .contact__inner {
+    gap: 32px;
+  }
+
+  .services__title {
+    margin-bottom: 32px;
+  }
+
+  .service {
+    grid-template-columns: 40px 1fr;
+    gap: 6px 12px;
+    padding: 24px 0;
+  }
+
+  .service__description {
+    grid-column: 2;
+  }
+
+  .service__title {
+    font-size: 22px;
+  }
+
+  .approach__body p:first-child,
+  .contact__lead {
+    font-size: 22px;
+  }
+
+  .legal {
+    padding-block: 56px 72px;
+  }
+
+  .legal__intro {
+    margin-bottom: 40px;
+  }
+
+  .legal__row {
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .site-footer__row {
+    padding-block: 24px;
+  }
+
+  .flash {
+    padding-inline: 20px;
+  }
 }

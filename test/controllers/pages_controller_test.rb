@@ -24,4 +24,12 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", text: "Ansatz"
     assert_select "h2", text: "Kontakt"
   end
+
+  test "headers render the wordmark as web-font text instead of an svg image" do
+    [ root_path, impressum_path, datenschutz_path ].each do |path|
+      get path
+      assert_select ".site-header .site-header__brand .wordmark", text: /shark/
+      assert_select ".site-header img", false, "expected no wordmark image in the header of #{path}"
+    end
+  end
 end

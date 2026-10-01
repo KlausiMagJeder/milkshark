@@ -7,6 +7,14 @@ Versionierung: [SemVer](https://semver.org/lang/de/).
 
 ## [Unreleased]
 
+### Added
+
+- Mobile Darstellung: Breakpoint bis 720px mit schmaleren Rändern, kompakteren Abständen und gestapelter Leistungsliste; Grids und Footer-Links laufen auf schmalen Bildschirmen nicht mehr über
+
+### Fixed
+
+- Wortmarke im Header wurde abgeschnitten: Das SVG-`<img>` konnte die Webfont nicht nutzen und fiel auf eine breitere Systemschrift zurück. Header und Hero nutzen jetzt ein gemeinsames Text-Partial `pages/_wordmark` in DM Sans
+
 ## [0.1.0] - 2026-10-01
 
 ### Added
