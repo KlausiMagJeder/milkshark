@@ -67,3 +67,20 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+# Ignore key files for decrypting credentials and more.
+/config/*.key
+
+# Harness-internal agent telemetry, not project content.
+/.claude/.agent-tracking.log
+
+/.superpowers/
+
+# IDE (RubyMine/IntelliJ)
+/.idea/
+
+# Rails placeholder files — except where the directory must exist at runtime
+.keep
+!/log/.keep
+!/tmp/.keep
+!/storage/.keep

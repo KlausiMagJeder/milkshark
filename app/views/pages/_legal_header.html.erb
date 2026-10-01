@@ -1,0 +1,13 @@
+<%# app/views/pages/_legal_header.html.erb %>
+<%# local: active_page (:impressum oder :datenschutz) %>
+<header class="site-header">
+  <div class="container site-header__row">
+    <%= link_to root_path, class: "site-header__brand" do %>
+      <%= image_tag "milkshark-wordmark.svg", alt: "milkshark", width: 98, height: 22, class: "site-header__wordmark" %>
+    <% end %>
+    <nav class="nav">
+      <%= link_to "Impressum", impressum_path, class: class_names("nav__link", "nav__link--active" => active_page == :impressum) %>
+      <%= link_to "Datenschutz", datenschutz_path, class: class_names("nav__link", "nav__link--active" => active_page == :datenschutz) %>
+    </nav>
+  </div>
+</header>

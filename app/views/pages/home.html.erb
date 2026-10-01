@@ -1,0 +1,83 @@
+<%# app/views/pages/home.html.erb %>
+<% content_for :title, "milkshark — Martin Beyer · Software Engineering & LaserCut" %>
+
+<div class="page">
+  <%= render "pages/home_header" %>
+
+  <main class="page__main">
+    <section id="top" class="container hero">
+      <p class="hero__eyebrow">Martin Beyer · Software Engineering & LaserCut</p>
+      <h1 class="hero__title">
+        m<span class="hero__dotless-i">ı<span class="hero__dot"></span></span>lk<span class="hero__bold">shark</span><span class="hero__accent">.</span>
+      </h1>
+      <div class="hero__intro">
+        <p>
+        Software-Dienstleistungen.
+        <br>
+          LaserCut-Dienstleistungen.
+        </p>
+        <p>Entwicklung, Beratung, Umsetzung und Betrieb <br> aus einer Hand.</p>
+      </div>
+      <div class="hero__actions">
+        <%= link_to "Anfrage senden", "#kontakt", class: "button button--primary" %>
+        <%= link_to "Leistungen ansehen", "#leistungen", class: "button button--outline" %>
+      </div>
+    </section>
+
+    <section id="leistungen" class="services">
+      <div class="container services__inner">
+        <h2 class="services__title">Leistungen</h2>
+
+        <article class="service">
+          <span class="service__index">01</span>
+          <h3 class="service__title">Softwareentwicklung</h3>
+          <p class="service__description">Umsetzung webbasierter Anwendungen</p>
+        </article>
+
+        <article class="service">
+          <span class="service__index">02</span>
+          <h3 class="service__title"> Software Consulting</h3>
+          <p class="service__description">IT- und SE-Beratungen mit dem Schwerpunkt </p>
+        </article>
+
+        <article class="service">
+          <span class="service__index">03</span>
+          <h3 class="service__title">Holz LaserCut</h3>
+          <p class="service__description">Cut-Arbeiten und Gravuren verschiedener Materialien </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ansatz" class="approach">
+      <div class="container approach__inner">
+        <h2 class="approach__title">Ansatz</h2>
+        <div class="approach__body">
+          <p>Kundenorientierte, enge Zusammenarbeit schafft gute Ergebnisse. <br><br> Ziel eines jeden Projektes sollte es sein, etwas zu schaffen, was man selber kaufen würde.</p>
+          <p>Keine Dienstleistungen außerhalb der angegebenen Leistungen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+      <div class="container contact__inner">
+        <div class="contact__intro">
+          <h2 class="contact__label">Kontakt</h2>
+          <p class="contact__lead">Interesse an einer Zusammenarbeit?</p>
+          <p class="contact__email">E-Mail: <%= mail_to "[E-Mail-Adresse]" %></p>
+        </div>
+        <%= render "contacts/form", contact_inquiry: @contact_inquiry %>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__row">
+      <span>© <%= Date.current.year %> Martin Beyer · Milkshark</span>
+      <span class="site-footer__links">
+        <%= link_to "Impressum", impressum_path %>
+        <%= link_to "Datenschutz", datenschutz_path %>
+        <%= link_to "Wortmarke (SVG)", image_path("milkshark-logo.svg"), download: "milkshark-logo.svg" %>
+      </span>
+    </div>
+  </footer>
+</div>
