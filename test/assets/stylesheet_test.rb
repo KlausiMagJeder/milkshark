@@ -17,6 +17,10 @@ class StylesheetTest < ActiveSupport::TestCase
     end
   end
 
+  test "adapts the layout for mobile viewports" do
+    assert_match(/@media \(max-width: 720px\)/, @css)
+  end
+
   test "ships the referenced DM Sans font files" do
     [ 400, 500, 700 ].each do |weight|
       font_path = Rails.root.join("app/assets/fonts/dm-sans-#{weight}.woff2")
