@@ -1,0 +1,506 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ * Included via `stylesheet_link_tag :app` in the layout, das per Propshaft-Konvention
+ * jede .css-Datei unter app/assets/** bündelt (Propshaft::Helper#app_stylesheets_paths).
+ */
+
+:root {
+  --color-bg: #faf9f7;
+  --color-text: #0f1211;
+  --color-text-muted: #5b625e;
+  --color-border: #e6e3dd;
+  --color-accent: #e8622a;
+  --color-input-border: #cfccc4;
+  --color-dark-bg: #0f1211;
+  --color-dark-text: #faf9f7;
+  --color-dark-text-muted: #9aa39e;
+  --color-dark-text-secondary: #b9c0bb;
+  --color-on-accent: #ffffff;
+  --content-width: 1180px;
+  --content-width-narrow: 900px;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("dm-sans-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("dm-sans-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("dm-sans-700.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+input, textarea, button {
+  font: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__main {
+  flex: 1;
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding-inline: 32px;
+  width: 100%;
+}
+
+.container--narrow {
+  max-width: var(--content-width-narrow);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.button--primary {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.button--primary:hover {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.button--outline {
+  border-color: var(--color-input-border);
+  color: var(--color-text);
+  background: transparent;
+}
+
+.button--outline:hover {
+  border-color: var(--color-text);
+}
+
+/* Header & Navigation */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__row {
+  padding-block: 18px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-header__wordmark {
+  display: block;
+  height: 22px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav__link {
+  color: var(--color-text-muted);
+}
+
+.nav__link--active {
+  color: var(--color-text);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.site-footer__row {
+  padding-block: 32px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.site-footer__links {
+  display: flex;
+  gap: 22px;
+}
+
+.site-footer__links a {
+  color: var(--color-text-muted);
+}
+
+/* Rechtsseiten (Impressum/Datenschutz) */
+.legal {
+  flex: 1;
+  padding-block: 88px 104px;
+}
+
+.legal__title {
+  margin: 0 0 16px;
+  font-size: clamp(40px, 7vw, 64px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.legal__intro {
+  margin: 0 0 64px;
+  font-size: 16px;
+  color: var(--color-text-muted);
+  max-width: 62ch;
+}
+
+.legal__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.legal__label {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.legal__value {
+  margin: 0;
+  font-size: 16.5px;
+  color: var(--color-text);
+  max-width: 62ch;
+}
+
+/* Hero */
+.hero {
+  padding-block: 132px 104px;
+}
+
+.hero__eyebrow {
+  margin: 0 0 40px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(56px, 11vw, 148px);
+  line-height: 0.92;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.hero__dotless-i {
+  position: relative;
+  display: inline-block;
+}
+
+.hero__dot {
+  position: absolute;
+  left: calc(50% + 0.0155em);
+  top: 0.125em;
+  transform: translateX(-50%);
+  width: 0.115em;
+  height: 0.115em;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.hero__bold {
+  font-weight: 700;
+}
+
+.hero__accent {
+  color: var(--color-accent);
+}
+
+.hero__intro {
+  margin: 48px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 900px;
+}
+
+.hero__intro p {
+  margin: 0;
+}
+
+.hero__intro p:first-child {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.hero__intro p:last-child {
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  margin: 48px 0 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Sticky Header (nur Startseite) */
+.site-header--sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+}
+
+/* Leistungen */
+.services {
+  border-top: 1px solid var(--color-border);
+}
+
+.services__inner {
+  padding-block: 96px;
+}
+
+.services__title {
+  margin: 0 0 56px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: 72px minmax(200px, 1.1fr) minmax(240px, 1.6fr);
+  gap: 32px;
+  padding: 34px 0;
+  border-top: 1px solid var(--color-border);
+  align-items: start;
+}
+
+.service:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service__index {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.service__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.service__description {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+/* Ansatz (dunkler Abschnitt) */
+.approach {
+  background: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+.approach__inner {
+  padding-block: 96px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 56px;
+}
+
+.approach__title {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dark-text-muted);
+  font-weight: 500;
+}
+
+.approach__body {
+  max-width: 58ch;
+}
+
+.approach__body p:first-child {
+  margin: 0 0 24px;
+  font-size: 26px;
+  line-height: 1.32;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.approach__body p:last-child {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-dark-text-secondary);
+}
+
+/* Kontakt */
+.contact__inner {
+  padding-block: 96px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 56px;
+}
+
+.contact__label {
+  margin: 0 0 28px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.contact__lead {
+  margin: 0 0 28px;
+  font-size: 26px;
+  line-height: 1.32;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.contact__email {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-text-muted);
+}
+
+.contact__email a {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-input-border);
+}
+
+/* Kontaktformular */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.field__input {
+  padding: 12px 0;
+  font-size: 16px;
+  color: var(--color-text);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-input-border);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.contact-form__submit {
+  align-self: flex-start;
+  border: none;
+}
+
+.contact-form__note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.contact-form__errors {
+  padding: 16px;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.contact-form__errors ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+/* Flash-Meldungen */
+.flash {
+  margin: 0;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.flash--notice {
+  background: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}

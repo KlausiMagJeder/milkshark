@@ -1,0 +1,11 @@
+de:
+  activemodel:
+    attributes:
+      contact_inquiry:
+        name: "Name"
+        email: "E-Mail"
+        message: "Nachricht"
+    errors:
+      messages:
+        blank: "muss ausgefüllt werden"
+        invalid: "ist nicht gültig"

@@ -1,0 +1,39 @@
+<%# app/views/contacts/_form.html.erb %>
+<%# local: contact_inquiry %>
+<%= form_with model: contact_inquiry, url: contact_path, class: "contact-form" do |form| %>
+  <div style="position: absolute; left: -9999px;" aria-hidden="true">
+    <label>Bitte leer lassen
+      <input type="text" name="contact_inquiry[honeypot]" tabindex="-1" autocomplete="off">
+    </label>
+  </div>
+
+  <% if contact_inquiry.errors.any? %>
+    <div class="contact-form__errors">
+      <p>Bitte prüfe folgende Angaben:</p>
+      <ul>
+        <% contact_inquiry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <label class="field">
+    Name
+    <%= form.text_field :name, class: "field__input" %>
+  </label>
+
+  <label class="field">
+    E-Mail
+    <%= form.email_field :email, class: "field__input" %>
+  </label>
+
+  <label class="field">
+    Nachricht
+    <%= form.text_area :message, rows: 4, class: "field__input" %>
+  </label>
+
+  <%= form.submit "Senden", class: "button button--primary contact-form__submit" %>
+
+  <p class="contact-form__note">Es gilt die <%= link_to "Datenschutzerklärung", datenschutz_path %>.</p>
+<% end %>

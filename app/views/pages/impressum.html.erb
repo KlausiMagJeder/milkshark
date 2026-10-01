@@ -1,0 +1,43 @@
+<%# app/views/pages/impressum.html.erb %>
+<% content_for :title, "Impressum · Milkshark" %>
+
+<div class="page">
+  <%= render "pages/legal_header", active_page: :impressum %>
+
+  <main class="container container--narrow legal">
+    <h1 class="legal__title">Impressum</h1>
+    <p class="legal__intro">Angaben gemäß § 5 DDG. Felder in Klammern sind noch zu ergänzen.</p>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Inhaber und Anbieter</h2>
+      <p class="legal__value">Martin Beyer<br>01237 Dresden<br>Deutschland</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Kontakt</h2>
+      <p class="legal__value">E-Mail: info[at]milkshark.de</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Verantwortlich für den Inhalt</h2>
+      <p class="legal__value">Martin Beyer</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Marke und Inhaberschaft</h2>
+      <p class="legal__value">Die Marke „Milkshark", die Wortmarke und die Inhalte dieser Seite liegen in der Inhaberschaft von Martin Beyer. Nutzung nur mit schriftlicher Zustimmung.</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Streitschlichtung</h2>
+      <p class="legal__value">Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle besteht keine Verpflichtung und keine Bereitschaft.</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Haftung</h2>
+      <p class="legal__value">Inhalte dieser Seite werden mit Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Für Inhalte verlinkter externer Seiten ist deren Betreiber verantwortlich.</p>
+    </div>
+  </main>
+
+  <%= render "pages/legal_footer", active_page: :impressum %>
+</div>

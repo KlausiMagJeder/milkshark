@@ -1,0 +1,37 @@
+<%# app/views/pages/datenschutz.html.erb %>
+<% content_for :title, "Datenschutz · Milkshark" %>
+
+<div class="page">
+  <%= render "pages/legal_header", active_page: :datenschutz %>
+
+  <main class="container container--narrow legal">
+    <h1 class="legal__title">Datenschutz</h1>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Verantwortlicher</h2>
+      <p class="legal__value">Martin Beyer, E-Mail: info[at]milkshark.de</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Umfang der Verarbeitung</h2>
+      <p class="legal__value">Diese Website verwendet keine Benutzerkonten sowie keine Analyse- oder Tracking-Dienste. Es wird ausschließlich ein technisch notwendiges Session-Cookie zum Schutz vor Cross-Site-Request-Forgery (CSRF) beim Absenden des Kontaktformulars gesetzt; eine Einwilligung ist hierfür nicht erforderlich (§ 25 Abs. 2 TDDDG).</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Kontaktformular und E-Mail</h2>
+      <p class="legal__value">Übermittelte Daten werden zur Bearbeitung der Anfrage verarbeitet (Art. 6 Abs. 1 bzw. f DSGVO) und nach Abschluss gelöscht, sofern keine Aufbewahrungspflichten bestehen.</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Externe Schriftarten</h2>
+      <p class="legal__value">Die Schrift DM Sans wird lokal ausgeliefert. Es findet keine Verbindung zu Google Fonts statt, es werden keine Daten an Google übertragen.</p>
+    </div>
+
+    <div class="legal__row">
+      <h2 class="legal__label">Rechte der Betroffenen</h2>
+      <p class="legal__value">Es bestehen die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde, für [Bundesland] die [zuständige Landesdatenschutzbehörde].</p>
+    </div>
+  </main>
+
+  <%= render "pages/legal_footer", active_page: :datenschutz %>
+</div>
